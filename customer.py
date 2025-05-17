@@ -3,7 +3,7 @@ class Customer:
     def __init__(self, name):
         self.name = name
 
-     @property
+    @property
     def name(self):
         return self._name
 
@@ -13,3 +13,11 @@ class Customer:
             self._name = value
         else:
             raise ValueError("Customer name must be a string between 1 and 15 characters.")
+        
+    def orders(self):
+        return [order for order in Order.all_orders if order.customer == self]
+
+    def coffees(self):
+        return list(set(order.coffee for order in self.orders()))
+        
+    
