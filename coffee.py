@@ -13,3 +13,9 @@ class Coffee:
             self._name = value
         else:
             raise ValueError("Coffee name must be a string with at least 3 characters.")
+        
+    def orders(self):
+        return [order for order in Order.all_orders if order.coffee == self]
+
+    def customers(self):
+        return list(set(order.customer for order in self.orders()))
