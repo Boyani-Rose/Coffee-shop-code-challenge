@@ -41,3 +41,6 @@ class Order:
             self._price = float(value)
         else:
             raise ValueError("price must be a float between 1.0 and 10.0.")
+        
+    def __repr__(self):
+       return f"Order(customer={self.customer.name}, coffee={self.coffee.name}, price={self.price})"

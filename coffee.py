@@ -1,3 +1,4 @@
+from order import Order
 
 class Coffee:
     def __init__(self, name):
@@ -28,3 +29,6 @@ class Coffee:
         if orders:
             return sum(order.price for order in orders) / len(orders)
         return 0
+    
+    def __repr__(self):
+       return f"Coffee('{self.name}')"

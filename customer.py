@@ -1,3 +1,4 @@
+from order import Order
 
 class Customer:
     def __init__(self, name):
@@ -32,6 +33,10 @@ class Customer:
         if not customer_spending:
             return None
         return max(customer_spending, key=customer_spending.get)
+    
+    def __repr__(self):
+       return f"Customer('{self.name}')"
+
 
         
     
